@@ -1,6 +1,6 @@
 const app = require('./src/app')
-
-const PORT = 3058
+require('dotenv').config()
+const PORT = process.env.PORT || 3058
 
 
 const server = app.listen(PORT,() => {
@@ -8,6 +8,6 @@ const server = app.listen(PORT,() => {
 })
 
 
-process.on('SIGINT',() => {
-server.close(() => console.log("Exit server Express"))
-})
+// process.on('SIGINT',() => {
+// server.close(() => console.log("Exit server Express"))
+// })
